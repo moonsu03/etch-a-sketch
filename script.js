@@ -7,3 +7,11 @@ for (let x = 1; x <= 16; x++) {
     container.append(divisionUnit);
   }
 }
+
+const divNode = document.querySelectorAll(".division-unit");
+
+divNode.forEach((element) => {
+  element.addEventListener("mouseenter", () => {
+    element.setAttribute("style", "background-color: rgb(15, 15, 15)");
+  });
+});
