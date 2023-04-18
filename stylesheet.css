@@ -1,7 +1,3 @@
-body {
-  background-color: lightslategray;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -9,18 +5,16 @@ body {
 }
 
 .container {
-  padding: 12px 570px;
+  padding: 12px;
+  width: 960px;
   background-color: lightskyblue;
   display: flex;
   flex-wrap: wrap;
 }
 
 .division-unit {
-  flex: 0 0 auto;
-  height: 48px;
-  width: 48px;
+  height: 56px;
+  width: 56px;
   border: 1px dashed black;
   background-color: lightcyan;
 }
-
-
