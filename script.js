@@ -42,11 +42,30 @@ function drawOnce(numberOfSquares) {
 
   divNode.forEach((element) => {
     element.addEventListener("mouseenter", () => {
-      element.setAttribute(
-        "style",
-        `background-color: rgb(15, 15, 15); 
+      var rgb = element.style.backgroundColor;
+
+      rgb = rgb
+        .substring(4, rgb.length - 1)
+        .replace(/ /g, "")
+        .split(",");
+
+      if (element.style.backgroundColor == ``) {
+        element.setAttribute(
+          "style",
+          `background-color: rgb(${Math.floor(Math.random() * 256)}, 
+        ${Math.floor(Math.random() * 256)}, 
+        ${Math.floor(Math.random() * 256)}); 
         width: ${800 / numberOfSquares}px; height: ${800 / numberOfSquares}px;`
-      );
+        );
+      } else {
+        element.setAttribute(
+          "style",
+          `background-color: rgba(${rgb[0] - 25}, ${rgb[1] - 25}, ${
+            rgb[2] - 25
+          });
+        width: ${800 / numberOfSquares}px; height: ${800 / numberOfSquares}px;`
+        );
+      }
     });
   });
 }
